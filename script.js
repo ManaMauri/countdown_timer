@@ -20,6 +20,16 @@ const interval = setInterval(function() {
     document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
     document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
 
+    // Calculate the percentage of time remaining
+    const totalDuration = countDownDate - new Date("October 11, 2023 00:00:00").getTime();
+    const percentageRemaining = distance / totalDuration;
+
+    // Adjust the circle's size based on the percentage of time remaining
+    const circle = document.querySelector('.circle');
+    const maxSize = 300; // the initial size of the circle in pixels
+    circle.style.width = `${maxSize * percentageRemaining}px`;
+    circle.style.height = `${maxSize * percentageRemaining}px`;
+
     // If the countdown is finished, display a message
     if (distance < 0) {
         clearInterval(interval);
