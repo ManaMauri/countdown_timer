@@ -8,37 +8,29 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-size: 1.5em; /* Set a consistent font size for the entire page */
 }
 
 .container {
     text-align: center;
-    width: 80%; /* Limit the width to ensure better spacing on wider screens */
-    max-width: 600px; /* Maximum width for the container */
 }
 
 .circle {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    padding-top: 100%; /* Maintain aspect ratio */
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-color: white;
     margin: 20px auto;
-    position: relative;
     transition: all 1s; /* smooth transition for shrinking */
-}
-
-.eye, .mouth {
-    position: absolute;
-    background-color: black;
+    position: relative; /* added for positioning the eyes and mouth */
 }
 
 .eye {
-    width: 10%;
-    height: 10%;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    top: 35%;
+    background-color: black;
+    position: absolute;
+    top: 40%;
 }
 
 .left-eye {
@@ -50,26 +42,29 @@ body {
 }
 
 .mouth {
-    width: 40%;
-    height: 20%;
-    bottom: 35%;
+    width: 120px;
+    height: 60px;
+    border-bottom: 5px solid black;
+    border-radius: 0 0 120px 120px;
+    position: absolute;
+    bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom: 5px solid black;
-    border-radius: 0 0 50% 50%;
 }
 
 .countdown {
+    font-size: 1.5em;
     margin: 20px 0;
 }
 
 span {
-    margin: 0 5px;
-    padding: 5px 10px;
+    margin: 0 10px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    display: inline-block;
+    display: inline-block; /* to prevent overlap */
 }
 
 .text {
+    font-size: 2em;
     margin-top: 20px;
 }
