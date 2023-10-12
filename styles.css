@@ -6,10 +6,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.countdown {
-    font-size: 3rem;
+.container {
     text-align: center;
 }
 
@@ -20,30 +21,24 @@ body {
     background-color: white;
     margin: 20px auto;
     transition: all 1s; /* smooth transition for shrinking */
+    position: relative; /* added for positioning the eyes and mouth */
 }
 
-span {
-    margin: 0 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-}
 .eye {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: black;
-    position: relative;
+    position: absolute;
     top: 40%;
 }
 
 .left-eye {
-    float: left;
-    margin-left: 60px;
+    left: 25%;
 }
 
 .right-eye {
-    float: right;
-    margin-right: 60px;
+    right: 25%;
 }
 
 .mouth {
@@ -51,8 +46,25 @@ span {
     height: 60px;
     border-bottom: 5px solid black;
     border-radius: 0 0 120px 120px;
-    position: relative;
-    top: 50%;
+    position: absolute;
+    bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.countdown {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+span {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline-block; /* to prevent overlap */
+}
+
+.text {
+    font-size: 2em;
+    margin-top: 20px;
 }
