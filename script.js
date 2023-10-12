@@ -27,9 +27,10 @@ const interval = setInterval(function() {
     // Adjust the circle's size based on the percentage of time remaining
     const circle = document.querySelector('.circle');
     const maxSize = 300; // the initial size of the circle in pixels
-    circle.style.width = `${maxSize * percentageRemaining}px`;
-    circle.style.height = `${maxSize * percentageRemaining}px`;
-
+    const newSize = maxSize * Math.sqrt(percentageRemaining); // Using the square root to make the shrinking effect more visually appealing
+    circle.style.width = `${newSize}px`;
+    circle.style.height = `${newSize}px`;
+    
     // If the countdown is finished, display a message
     if (distance < 0) {
         clearInterval(interval);

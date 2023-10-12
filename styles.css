@@ -27,3 +27,32 @@ span {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
 }
+.eye {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    top: 40%;
+}
+
+.left-eye {
+    float: left;
+    margin-left: 60px;
+}
+
+.right-eye {
+    float: right;
+    margin-right: 60px;
+}
+
+.mouth {
+    width: 120px;
+    height: 60px;
+    border-bottom: 5px solid black;
+    border-radius: 0 0 120px 120px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
