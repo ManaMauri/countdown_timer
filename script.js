@@ -69,10 +69,11 @@ face.addEventListener('click', function() {
 
     if (audioPlayer.paused) {
         audioPlayer.play(); // Play the MP3
+        face.classList.add('surprised'); // Change to surprised expression
     } else {
         audioPlayer.pause(); // Pause the MP3
+        face.classList.remove('surprised'); // Revert to smiley face
     }
-    face.classList.remove('surprised'); // Revert to the current state
 });
 
 face.addEventListener('mouseover', function() {
@@ -80,5 +81,7 @@ face.addEventListener('mouseover', function() {
 });
 
 face.addEventListener('mouseout', function() {
-    face.classList.remove('surprised');
+    if (audioPlayer.paused) {
+        face.classList.remove('surprised'); // If audio is paused, revert to smiley face on mouse out
+    }
 });
