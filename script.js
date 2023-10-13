@@ -62,6 +62,11 @@ const interval = setInterval(function() {
 
 // Add event listeners for the smiley face interaction
 face.addEventListener('click', function() {
+    // Ensure audio context is resumed after user interaction
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
     if (audioPlayer.paused) {
         audioPlayer.play(); // Play the MP3
     } else {
