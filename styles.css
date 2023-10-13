@@ -8,37 +8,32 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-size: 1.5em; /* Set a consistent font size for the entire page */
+    font-size: 1.5em;
 }
 
 .container {
     text-align: center;
-    width: 80%; /* Limit the width to ensure better spacing on wider screens */
-    max-width: 600px; /* Maximum width for the container */
+    width: 80%;
+    max-width: 600px;
 }
 
 .circle {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    padding-top: 100%; /* Maintain aspect ratio */
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-color: white;
     margin: 20px auto;
     position: relative;
-    transition: all 1s; /* smooth transition for shrinking */
-}
-
-.eye, .mouth {
-    position: absolute;
-    background-color: black;
+    transition: all 1s;
 }
 
 .eye {
-    width: 10%;
-    height: 10%;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    top: 35%;
+    background-color: black;
+    position: absolute;
+    top: 40%;
 }
 
 .left-eye {
@@ -50,22 +45,22 @@ body {
 }
 
 .mouth {
-    width: 40%;
-    height: 20%;
-    bottom: 35%;
+    width: 120px;
+    height: 60px;
+    border-bottom: 5px solid black;
+    border-radius: 0 0 120px 120px;
+    position: absolute;
+    bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom: 5px solid black;
-    border-radius: 0 0 50% 50%;
 }
 
-/* Surprised face styles */
-.circle.surprised .mouth {
-    width: 40%;
-    height: 10%;
-    border: 5px solid black;
-    border-top: none;
-    border-radius: 50%;
+.circle:hover .mouth {
+    width: 80px;
+    height: 5px;
+    border: none;
+    background-color: black;
+    border-radius: 0;
     bottom: 40%;
 }
 
@@ -78,8 +73,4 @@ span {
     padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     display: inline-block;
-}
-
-.text {
-    margin-top: 20px;
 }
