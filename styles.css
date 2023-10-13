@@ -64,6 +64,16 @@ body {
     bottom: 40%;
 }
 
+/* Excited face styles */
+.circle.excited .mouth {
+    width: 40%;
+    height: 20%;
+    border-bottom: 5px solid black;
+    border-radius: 50% 50% 0 0;
+    top: 40%;
+    transform: rotate(180deg);
+}
+
 .countdown {
     margin: 20px 0;
 }
